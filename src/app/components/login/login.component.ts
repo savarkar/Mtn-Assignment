@@ -42,26 +42,25 @@ userdata:any;
    public onSubmit() {
     this.submitted = true;
 
-   // this.router.navigateByUrl('dashobard');
-    // set payload
-    const loginpayload = {
-      email: this.user.email,
-      password: this.user.password
-    };
-    this.store.dispatch(loginPage(this.loginForm.value));
-
+  //  // this.router.navigateByUrl('dashobard');
+  //   // set payload
+  //   const loginpayload = {
+  //     email: this.user.email,
+  //     password: this.user.password
+  //   };
+  console.log(this.loginForm.value);
+    this.store.dispatch({
+      type:'loginPage',
+      payload:this.loginForm.value
+    });
 
     localStorage.setItem("datas", this.loginForm.value);
 
   if (this.loginForm.invalid) {
- 
     //let abcs=localStorage.setItem(abc, 'this.messsage')
-
   }
   else{
     this.router.navigateByUrl('/dashboard');
-    
-  
   }
   }
 

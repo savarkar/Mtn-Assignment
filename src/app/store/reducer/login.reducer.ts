@@ -10,7 +10,10 @@ export interface UserState {
   user:User,
   error:any
 }
-
+export interface logoutsate {
+  logout:User,
+  error:any
+}
 export const initialState: UserState = {
   user:{
     email:null,
@@ -31,6 +34,18 @@ export const userreducer = createReducer(
   })
   
   );
+  export const logoutreducer = createReducer(
+    
+    on(Userlogins.logout, (state, action)=>{
+      if (action.type === Userlogins.logout) {
+        state = undefined;
+      }
+  
+    //  return userreducer(state, action);
+     
+    })
+    
+    );
 
 
   export function reducers(state: UserState | undefined, action: Action): any {

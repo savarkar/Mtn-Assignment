@@ -12,6 +12,11 @@ export const loginsuccess = createAction(
     props<{message:string}>()
 );
 
-export const logout = createAction('[Auth] logout');
+export const logout = createAction(
+    '[Auth] logout',
+    props<{user:User}>()
+    
+    );
+
 export const logoutComplete = createAction('[Auth] logoutComplete');
 
