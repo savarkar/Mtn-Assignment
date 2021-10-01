@@ -51,7 +51,7 @@ userdata:any;
   console.log(this.loginForm.value);
     this.store.dispatch({
       type:'loginPage',
-      payload:this.loginForm.value
+      payload:{users:this.loginForm.value}
     });
 
     localStorage.setItem("datas", this.loginForm.value);
